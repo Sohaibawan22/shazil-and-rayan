@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  }
+  html { 
+    scroll-behavior: smooth; 
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-[#060810] text-gray-100 overflow-x-hidden;
+  }
+  h1, h2, h3, h4, h5, h6 { 
+    font-family: 'Outfit', sans-serif; 
+  }
+  a { 
+    text-decoration: none; 
+    color: inherit; 
+  }
+}
+
+@layer components {
+  /* ── Custom Brand Colors & UI Utilities ── */
+  .text-brand-gold {
+    color: #F5C71A;
+  }
+  
+  .bg-brand-gold {
+    background-color: #F5C71A;
+  }
+  
+  .border-brand-gold {
+    border-color: #F5C71A;
+  }
+
+  /* ── Premium Buttons ── */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 font-bold px-6 py-3.5 rounded-lg
+           bg-[#F5C71A] text-black transition-all duration-300 border-none select-none
+           hover:bg-[#E0B212] hover:shadow-[0_0_20px_rgba(245,199,26,0.4)]
+           hover:-translate-y-0.5 active:translate-y-0 active:scale-95;
+  }
+
+  .btn-gold-outline {
+    @apply inline-flex items-center justify-center gap-2 font-bold px-6 py-3.5 rounded-lg
+           border border-[#F5C71A] text-white backdrop-blur-sm bg-transparent
+           transition-all duration-300 select-none
+           hover:bg-[#F5C71A] hover:text-black hover:shadow-[0_0_20px_rgba(245,199,26,0.3)]
+           hover:-translate-y-0.5 active:translate-y-0 active:scale-95;
+  }
+
+  /* ── Sleek Section Headings ── */
+  .section-badge-gold {
+    @apply inline-flex items-center gap-1.5 text-[#F5C71A] font-bold tracking-widest
+           text-xs uppercase mb-3 px-3 py-1.5 rounded-md border border-[#F5C71A]/20;
+    background: rgba(245, 199, 26, 0.05);
+  }
+
+  .section-title-dark {
+    @apply text-3xl md:text-4xl font-extrabold text-white mb-4;
+  }
+
+  .section-title-light {
+    @apply text-3xl md:text-4xl font-extrabold text-[#111827] mb-4;
+  }
+
+  /* ── Glass card styles ── */
+  .glass-premium {
+    @apply rounded-xl border border-white/5 backdrop-blur-md;
+    background: rgba(15, 17, 26, 0.65);
+  }
+
+  .glass-card-hover {
+    @apply transition-all duration-300;
+  }
+  .glass-card-hover:hover {
+    @apply border-white/10 -translate-y-1;
+    background: rgba(15, 17, 26, 0.85);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  }
+
+  /* ── Container wrappers ── */
+  .container-main { 
+    @apply max-w-7xl mx-auto px-4 sm:px-8; 
+  }
+}
+
+/* ── Custom Animations & Effects ── */
+.nav-link-underline {
+  position: relative;
+}
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; 
+  left: 0;
+  width: 0; 
+  height: 2px;
+  background-color: #F5C71A;
+  transition: width 0.3s ease;
+}
+.nav-link-underline:hover::after,
+.nav-link-underline.active::after { 
+  width: 100%; 
+}
+
+/* ── Card Shimmer Effect on hover ── */
+.premium-card-white {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.premium-card-white:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  border-color: rgba(245, 199, 26, 0.4);
+}
+
+/* ── WhatsApp floating style ── */
+@keyframes pulse-gold {
+  0% { box-shadow: 0 0 0 0 rgba(245, 199, 26, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(245, 199, 26, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 199, 26, 0); }
+}
+.pulse-gold-btn {
+  animation: pulse-gold 2s infinite;
+}
+
+/* Custom rounded overlay for Hero section */
+.hero-bottom-curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero-bottom-curve svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 48px;
+}
+
+.hero-bottom-curve .shape-fill {
+  fill: #FFFFFF;
+}
+
+/* Custom styles for Fleet Slider */
+.fleet-card {
+  background: #111319;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fleet-card:hover {
+  border-color: rgba(245, 199, 26, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transform: translateY(-4px);
+}
