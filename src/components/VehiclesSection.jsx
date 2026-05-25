@@ -101,7 +101,7 @@ const VehiclesSection = ({ fadeInUp }) => {
           </motion.div>
 
           {/* Slider Buttons */}
-          <div className="flex items-center gap-3 mt-6 md:mt-0">
+          <div className="flex items-center gap-3 mt-6 md:mt-0 self-end md:self-auto">
             <button 
               onClick={prevSlide}
               className="w-11 h-11 rounded-full border border-[#F5C71A] bg-transparent text-[#F5C71A] flex items-center justify-center transition-all duration-300 hover:bg-[#F5C71A] hover:text-black hover:shadow-[0_0_15px_rgba(245,199,26,0.3)] active:scale-95"
@@ -123,7 +123,17 @@ const VehiclesSection = ({ fadeInUp }) => {
         <div className="overflow-hidden py-4 -my-4 relative">
           <motion.div 
             ref={sliderRef}
-            className="flex gap-6 md:gap-8"
+            className="flex gap-6 md:gap-8 cursor-grab active:cursor-grabbing"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.15}
+            onDragEnd={(e, { offset }) => {
+              if (offset.x < -40) {
+                nextSlide();
+              } else if (offset.x > 40) {
+                prevSlide();
+              }
+            }}
             animate={{ x: `calc(-${currentIndex * (300 + 32)}px)` }} // Dynamic translation calculation
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
             style={{ width: 'max-content' }}
