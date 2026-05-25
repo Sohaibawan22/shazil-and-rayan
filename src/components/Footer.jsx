@@ -136,7 +136,8 @@ const Footer = () => {
 
         {/* Footer Bottom Metadata Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-semibold text-gray-500">
-          <span>© {currentYear} Shazil And Rayan Interprise. All Rights Reserved.</span>
+          <span>© {currentYear} Shazil And Rayan
+CARGO CAR CARRIER SERVICES. All Rights Reserved.</span>
           <div className="flex items-center gap-4">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <span>|</span>

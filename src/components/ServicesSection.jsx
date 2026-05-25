@@ -65,10 +65,8 @@ const ServicesSection = ({ fadeInUp }) => {
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_API_URL}/services`)
       .then(r => {
-        if (r.data && r.data.length > 0) {
+        if (r.data) {
           setServices(r.data);
-        } else {
-          setServices(DEFAULT_SERVICES);
         }
       })
       .catch(err => {

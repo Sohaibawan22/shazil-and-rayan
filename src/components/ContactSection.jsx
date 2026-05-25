@@ -49,7 +49,7 @@ const ContactSection = ({ fadeInUp }) => {
       icon: <MapPin size={16} className="stroke-[2.5px]" />,
       label: 'Location',
       value: 'Siraj Brothers Plot No. 681-A,Gate No. 6New Truck Stand, Hawksbay Road, Karachi',
-      href: `https://www.google.com/maps/place/24%C2%B052'03.1%22N+66%C2%B057'06.0%22E/@24.8675213,66.9490929,17z/data=!3m1!4b1!4m4!3m3!8m2!3d24.8675213!4d66.9516678?hl=en&entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D`
+      href: `https://maps.app.goo.gl/HMwPpC1dogPW4Byf9`
     }
   ];
 
@@ -143,19 +143,19 @@ Description: ${formData.description}`;
             {/* Google Map Card */}
             <div className="rounded-xl overflow-hidden shadow-xl border border-gray-100 h-[210px] relative mb-4">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.1729094038166!2d67.06646831500414!3d24.858276784055278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33ee44e33aa13%3A0xe54e6fa16b08053a!2sKarachi%20Logistics%20Hub!5e0!3m2!1sen!2spk!4v1614234567890!5m2!1sen!2spk"
+                src="https://maps.google.com/maps?q=Siraj%20Brothers%20Plot%20No.%20681-A,%20Gate%20No.%206%20New%20Truck%20Stand,%20Hawksbay%20Road,%20Karachi&t=&z=14&ie=UTF8&iwloc=&output=embed"
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
                 allowFullScreen="" 
                 loading="lazy"
-                title="SR Interprise Location Map"
+                title="SHAZIL AND RAYAN CARGO CAR CARRIER SERVICES Location Map"
               />
             </div>
 
             {/* Open Maps Button */}
             <a 
-              href="https://www.google.com/maps/place/Kalri,+Pakistan/@32.7308565,71.773703,16z/data=!4m15!1m8!3m7!1s0x3927376a88d7fc5d:0x17e6737e47512aaf!2sKalri,+Pakistan!3b1!8m2!3d32.7304028!4d71.7785585!16s%2Fm%2F047c87q!3m5!1s0x3927376a88d7fc5d:0x17e6737e47512aaf!8m2!3d32.7304028!4d71.7785585!16s%2Fm%2F047c87q?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D"
+              href="https://maps.app.goo.gl/HMwPpC1dogPW4Byf9"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-black hover:bg-[#1a1a1a] text-white font-extrabold text-[10px] tracking-widest py-3 rounded-lg flex items-center justify-center transition-all duration-300 shadow-md uppercase"

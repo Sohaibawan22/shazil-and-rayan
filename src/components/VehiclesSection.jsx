@@ -43,10 +43,8 @@ const VehiclesSection = ({ fadeInUp }) => {
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_API_URL}/vehicles`)
       .then(r => {
-        if (r.data && r.data.length > 0) {
+        if (r.data) {
           setVehicles(r.data);
-        } else {
-          setVehicles(DEFAULT_VEHICLES);
         }
       })
       .catch(err => {
@@ -68,7 +66,9 @@ const VehiclesSection = ({ fadeInUp }) => {
   // Helper to construct absolute image path correctly
   const getVehicleImg = (url) => {
     if (!url) return 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80&w=800';
-    if (url.startsWith('http')) return url;
+    if (url.startsWith('http') || url.startsWith('data:')) return url;
+    
+    // In case of old relative uploads
     return `http://localhost:5000${url}`;
   };
 

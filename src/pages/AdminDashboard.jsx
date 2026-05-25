@@ -43,7 +43,7 @@ const AdminDashboard = () => {
   const [submitting,  setSubmitting]  = useState(false);
   const [toast,       setToast]       = useState(null);
 
-  const [newService, setNewService] = useState({ title: '', description: '', icon: 'Truck' });
+  const [newService, setNewService] = useState({ title: '', description: '' });
   const [newVehicle, setNewVehicle] = useState({ name: '', capacity: '', description: '', imageUrl: '' });
 
   const navigate      = useNavigate();
@@ -141,7 +141,7 @@ const AdminDashboard = () => {
     setSubmitting(true);
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/services`, newService, authCfg);
-      setNewService({ title: '', description: '', icon: 'Truck' });
+      setNewService({ title: '', description: '' });
       showToast('Service added successfully!');
       fetchData();
     } catch { showToast('Failed to add service.', 'error'); }
@@ -192,8 +192,6 @@ const AdminDashboard = () => {
     { id: 'vehicles', label: 'Vehicles', icon: <Truck size={18} />,         count: vehicles.length },
     { id: 'contacts', label: 'Messages', icon: <MessageSquare size={18} />, count: contacts.length },
   ];
-
-  const ICON_OPTIONS = ['Truck', 'Shield', 'MapPin', 'Lock', 'Headphones', 'Star', 'Package', 'Zap'];
 
   const FALLBACK_IMG = 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80&w=800';
 
@@ -339,18 +337,12 @@ const AdminDashboard = () => {
                     <h4 className="text-xs font-bold text-white uppercase tracking-widest flex items-center gap-2">
                       <Plus size={14} className="text-[#F5C71A]" /> Add New Service
                     </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 gap-4">
                       <input
                         type="text" placeholder="Service Title"
                         className="admin-input" value={newService.title}
                         onChange={(e) => setNewService({ ...newService, title: e.target.value })} required
                       />
-                      <select
-                        className="admin-input" value={newService.icon}
-                        onChange={(e) => setNewService({ ...newService, icon: e.target.value })}
-                      >
-                        {ICON_OPTIONS.map(ic => <option key={ic} value={ic}>{ic}</option>)}
-                      </select>
                     </div>
                     <textarea
                       placeholder="Service Description" rows="3"
@@ -368,7 +360,6 @@ const AdminDashboard = () => {
                     {services.map((s) => (
                       <div key={s._id} className="admin-card flex items-start justify-between gap-4 hover:border-white/10 transition-colors">
                         <div className="min-w-0">
-                          <span className="text-[10px] font-bold uppercase tracking-widest text-[#F5C71A]/70 mb-1 block">{s.icon}</span>
                           <h4 className="font-semibold text-white text-sm truncate">{s.title}</h4>
                           <p className="text-slate-400 text-xs mt-1 line-clamp-2">{s.description}</p>
                         </div>
