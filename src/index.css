@@ -169,3 +169,57 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   transform: translateY(-4px);
 }
+
+/* ── Admin Dashboard ── */
+.admin-card {
+  @apply bg-[#0a0c14] border border-white/[0.06] rounded-xl p-5;
+}
+
+.admin-input {
+  @apply w-full bg-[#0e1018] border border-white/[0.08] rounded-lg px-4 py-3
+    text-white text-sm placeholder-slate-500
+    focus:outline-none focus:border-[#F5C71A]/50 focus:ring-1 focus:ring-[#F5C71A]/20
+    transition-all duration-200;
+}
+
+.admin-input option {
+  background-color: #0e1018;
+}
+
+.admin-btn-primary {
+  @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold
+    bg-[#F5C71A] text-black hover:bg-[#E0B212]
+    disabled:opacity-50 disabled:cursor-not-allowed
+    transition-all duration-200 hover:shadow-lg hover:shadow-[#F5C71A]/20;
+}
+
+.admin-delete-btn {
+  @apply p-2 rounded-lg text-slate-500 hover:text-red-400 hover:bg-red-500/10
+    transition-all duration-200;
+}
+
+.admin-stat-card {
+  @apply flex items-center gap-4 bg-[#0a0c14] border border-white/[0.06] rounded-xl p-4;
+}
+
+.admin-stat-icon {
+  @apply w-11 h-11 rounded-xl border flex items-center justify-center shrink-0;
+}
+
+.admin-empty-state {
+  @apply flex flex-col items-center justify-center py-16 rounded-xl
+    border border-dashed border-white/[0.08] text-slate-500 text-sm;
+}
+
+/* ── Animations ── */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.animate-slideIn { animation: slideIn 0.25s ease-out forwards; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn { animation: fadeIn 0.3s ease-out forwards; }

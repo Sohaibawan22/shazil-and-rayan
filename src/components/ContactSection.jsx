@@ -26,8 +26,8 @@ const ContactSection = ({ fadeInUp }) => {
     {
       icon: <Mail size={16} className="stroke-[2.5px]" />,
       label: 'Email',
-      value: 'info@srinterprise.com',
-      href: 'mailto:info@srinterprise.com'
+      value: 'tauqeer6342@gmail.com',
+      href: 'mailto:tauqeer6342@gmail.com'
     },
     {
       icon: (
@@ -36,20 +36,20 @@ const ContactSection = ({ fadeInUp }) => {
         </svg>
       ),
       label: 'WhatsApp',
-      value: '+92 302 2249587',
-      href: 'https://wa.me/923022249587'
+      value: '+923006631918',
+      href: 'https://wa.me/923006631918'
     },
     {
       icon: <Phone size={16} className="stroke-[2.5px]" />,
       label: 'Phone',
-      value: '+92 302 2249587',
-      href: 'tel:+92 302 2249587'
+      value: '+923006631918',
+      href: 'tel:+923006631918'
     },
     {
       icon: <MapPin size={16} className="stroke-[2.5px]" />,
       label: 'Location',
-      value: '123,  SR interprise Office, Karachi, Pakistan',
-      href: 'https://maps.google.com/?q=SR+Interprise+Karachi'
+      value: 'Siraj Brothers Plot No. 681-A,Gate No. 6New Truck Stand, Hawksbay Road, Karachi',
+      href: `https://www.google.com/maps/place/24%C2%B052'03.1%22N+66%C2%B057'06.0%22E/@24.8675213,66.9490929,17z/data=!3m1!4b1!4m4!3m3!8m2!3d24.8675213!4d66.9516678?hl=en&entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D`
     }
   ];
 

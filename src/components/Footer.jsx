@@ -61,7 +61,7 @@ const Footer = () => {
               ].map((social, idx) => (
                 <a 
                   key={idx} 
-                  href={social.name === 'wa' ? 'https://wa.me/923001234567' : '#'}
+                  href={social.name === 'wa' ? 'https://wa.me/03006631918' : '#'}
                   target={social.name === 'wa' ? '_blank' : '_self'}
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-full border border-white/10 text-white flex items-center justify-center transition-all duration-300 hover:border-[#F5C71A] hover:text-[#F5C71A]"
